@@ -1,4 +1,4 @@
-const  data = [
+const  products = [
     {
         id: '7df3f04b-0ee0-4a8a-bda8-e2931e68860d',
         title: 'MacBook Pro 16-inch',
@@ -50,4 +50,4 @@ const  data = [
         imageLink: 'https://www.apple.com/v/iphone/home/af/images/overview/compare/compare_iphone_11_pro__fvqwhr4dkhiu_large.jpg'
     }
 ];
-export default data;
+export default products;

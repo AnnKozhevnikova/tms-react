@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "../styles/components/Sort.css";
 
 export default class Sort extends Component {
+
+
+
+
 	render() {
 		return(
 			<section className="container row sort">
@@ -16,4 +20,7 @@ export default class Sort extends Component {
 		);
 	}
 }
+
+
+
 

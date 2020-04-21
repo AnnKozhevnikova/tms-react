@@ -1,0 +1,3 @@
+node_modules/
+../tms-reack2/tms-react/package-lock.json
+dist/
