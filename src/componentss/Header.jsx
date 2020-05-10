@@ -14,7 +14,7 @@ export default class Header extends Component {
 				<div className="container header__container">
 						<div className="header__logo">The best shop</div>
 						<Search/>
-						<Basket count={this.props.count} amount={this.props.amount} />
+						<Basket/>
 				</div>
 			</header>
 		)

@@ -1,3 +1,18 @@
 a {
     text-decoration: none;
 }
+
+.button {
+    display: flex;
+    min-width: 270px;
+    height: 35px;
+    background-color: #ff8b38;
+    border-radius: 5px;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    background: black;
+}

@@ -9,29 +9,31 @@ class Catalog extends Component {
 		super(props);
 		this.handleClick=this.handleClick.bind(this);
 	}
-	handleClick (event) {
-		event.preventDefault();
-		this.props.history.push(this.props.product.id);
-	}
+
+	handleClick (productId) {
+        return (event) => {
+            event.preventDefault();
+            this.props.history.push(productId);
+        }
+    }
 	render () {
-		console.log(this.props);
-		return (
-			<section className="container " id="section">
+		return this.props.products.map( product => (
+			<section key={product.id} className="container " id="section">
 				<div className="row main">
-						<div className="image">
-								<img src={this.props.product.imageLink} alt=' ' />
-						</div>
-						<div className="properties">
-								<a onClick={this.handleClick} className="cart_title" href="#">{this.props.product.title}</a>
-								<p className="characteristics" dangerouslySetInnerHTML={{__html: this.props.product.description}} />
-						</div>
-						<div className="product_price">
-								<p className="price" >${this.props.product.price.value}.00</p>
-								<BasketButton />
-						</div>
+					<div className="image">
+						<img src={product.imageLink} alt=' ' />
+					</div>
+					<div className="properties">
+						<a onClick={this.handleClick(product.id)} className="cart_title" href="#">{product.title}</a>
+						<p className="characteristics" dangerouslySetInnerHTML={{__html: product.description}} />
+					</div>
+					<div className="product_price">
+						<p className="price" >${product.price.value}.00</p>
+						<BasketButton product={product}/>
+					</div>
 				</div>
 			</section>
-		)
+		))
 	}
 }
 
