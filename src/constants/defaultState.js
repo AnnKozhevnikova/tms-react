@@ -3,3 +3,7 @@ export const basketState = {
     count:0,
     amount:0,
 }
+export const productsState={
+    origin:[],
+    current:[],
+};

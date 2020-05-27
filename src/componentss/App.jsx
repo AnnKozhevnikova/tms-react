@@ -1,34 +1,33 @@
-import React, {Component} from 'react';
+import React, {useEffect} from 'react';
 import {hot} from 'react-hot-loader/root';
+import { useDispatch } from 'react-redux';
 
-import data from '../constants/catalogData';
 import '../styles/components/App.css';
 
 import Header from "./Header.jsx";
 import MainBody from "./MainBody.jsx";
-import products from "../constants/catalogData";
 
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            basket: {
-                count: 0,
-                amount: 0,
-            }
-        };
+//action
+import {addProducts} from "../actions";
 
-    }
 
-    render() {
-        return (
-            <div className="App">
-                <Header />
-                <MainBody products={products}/>
-            </div>
-        );
-    }
+const  App =()=>{
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        fetch('/api/products')
+            .then(res=>res.json())
+            .then(products=>{
+                dispatch(addProducts(products));
+            })
+    },[]);
+
+    return (
+        <div className="App">
+            <Header />
+            <MainBody/>
+        </div>
+    );
+
 }
-
 export default hot(App);

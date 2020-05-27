@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { withRouter } from "react-router";
 
 
-class Card extends Component {
-    render () {
-        let product=this.props.products.find(item => item.id===this.props.match.params.id);
+const  Card=(props)=>{
+        let product=props.products.find(item => item.id===props.match.params.id);
         return (
             <section className="container " id="section">
                 <div className="row main">
@@ -21,7 +20,6 @@ class Card extends Component {
                 </div>
             </section>
         )
-    }
 }
 
 export default withRouter(Card);
